@@ -1,13 +1,6 @@
 package nl.jaapsblog.app;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
