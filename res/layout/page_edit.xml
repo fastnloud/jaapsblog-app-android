@@ -120,6 +120,6 @@
                     android:text="Save"
                     android:id="@+id/submit" android:paddingLeft="50dp"
                     android:paddingRight="50dp" android:layout_marginTop="8dp"
-                    android:onClick="login"/>
+                    android:onClick="submitForm"/>
         </LinearLayout>
 </ScrollView>

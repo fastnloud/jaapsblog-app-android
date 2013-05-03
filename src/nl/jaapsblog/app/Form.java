@@ -53,7 +53,7 @@ public class Form extends Activity {
     }
 
     /* Submit action */
-    public void submit(View view) {
+    public void submitForm(View view) {
 
     }
 }
