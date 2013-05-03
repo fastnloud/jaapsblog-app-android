@@ -2,12 +2,16 @@ package nl.jaapsblog.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class PageEditActivity extends Activity implements Tasks {
+public class PageEditActivity extends Form implements Tasks {
 
     private ArrayList<Integer> fields = new ArrayList<Integer>();
 
@@ -26,8 +30,17 @@ public class PageEditActivity extends Activity implements Tasks {
 
             String extra[] = getIntent().getStringArrayExtra("extra");
             for (int i = 0; i < extra.length; ++i) {
-                EditText field = (EditText) findViewById(fields.get(i));
-                field.setText(getIntent().getStringExtra(extra[i]));
+                if (extra[i].equals("priority")) {
+                    createSpinner(fields.get(i), "priority", getIntent().getStringExtra(extra[i]));
+                } else if (extra[i].equals("status")) {
+                    ArrayList values = new ArrayList<String>();
+                    values.addAll(Arrays.asList("online", "online-not-in-menu", "offline"));
+
+                    createSpinner(fields.get(i), values, getIntent().getStringExtra(extra[i]));
+                } else {
+                    EditText field = (EditText) findViewById(fields.get(i));
+                    field.setText(getIntent().getStringExtra(extra[i]));
+                }
             }
         }
     }
