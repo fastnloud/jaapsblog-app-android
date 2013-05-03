@@ -22,7 +22,8 @@
         <activity android:name=".PageActivity"
                   android:label="Pages"/>
         <activity android:name=".PageEditActivity"
-                  android:label="Edit page"/>
+                  android:label="Edit page"
+                  android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".KillActivity"/>
     </application>
 </manifest> 
