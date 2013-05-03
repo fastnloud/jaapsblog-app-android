@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="nl.jaapsblog.app"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application android:label="@string/app_name" >
+        <activity android:name="AuthActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                android:label="Menu">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.jaapsblog.admin.AuthActivity" />
+        </activity>
+        <activity android:name=".PageActivity"
+                  android:label="Pages"/>
+        <activity android:name=".PageEditActivity"
+                  android:label="Edit page"/>
+        <activity android:name=".KillActivity"/>
+    </application>
+</manifest> 

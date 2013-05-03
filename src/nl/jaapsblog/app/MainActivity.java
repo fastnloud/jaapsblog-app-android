@@ -1,0 +1,38 @@
+package nl.jaapsblog.app;
+
+import android.app.ListActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class MainActivity extends ListActivity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        String[] list = new String[] {"Pages", "Logout"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+            android.R.layout.simple_list_item_1, list
+        );
+
+        setListAdapter(adapter);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        if (0 == position) {
+            Intent intent = new Intent(this, PageActivity.class);
+            startActivity(intent);
+        } else if (1 == position) {
+            Intent intent = new Intent(this, KillActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onBackPressed() { }
+
+}

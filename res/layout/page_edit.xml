@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:orientation="vertical"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content" android:paddingLeft="10dp"
+                      android:paddingTop="20dp" android:paddingRight="10dp" android:paddingBottom="20dp" android:padding="10dp" android:background="#ececec">
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/id" android:enabled="false" android:visibility="gone"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_title"
+                    android:textSize="16dp"
+                    android:padding="2dp" android:autoText="true" android:gravity="left"
+                    />
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/title" android:singleLine="true"
+                    android:autoText="false"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_label"
+                    android:textSize="16dp" android:gravity="left"
+                    android:padding="2dp" android:autoText="true"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/label" android:singleLine="true"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_url_string"
+                    android:textSize="16dp"
+                    android:padding="2dp" android:autoText="true" android:gravity="left"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/url_string" android:singleLine="true"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_route"
+                    android:textSize="16dp" android:gravity="left"
+                    android:padding="2dp" android:autoText="true"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/route" android:singleLine="true"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_content"
+                    android:textSize="16dp" android:gravity="left"
+                    android:padding="2dp" android:autoText="true"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/content"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_status"
+                    android:textSize="16dp" android:gravity="left"
+                    android:padding="2dp" android:autoText="true"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/status" android:singleLine="true"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_priority"
+                    android:textSize="16dp" android:gravity="left"
+                    android:padding="2dp" android:autoText="true"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/priority" android:singleLine="true"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_meta_title"
+                    android:textSize="16dp" android:gravity="left"
+                    android:padding="2dp" android:autoText="true"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/meta_title" android:singleLine="true"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_meta_description"
+                    android:textSize="16dp" android:gravity="left"
+                    android:padding="2dp" android:autoText="true"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/meta_description"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/field_label_meta_keywords"
+                    android:textSize="16dp" android:gravity="left"
+                    android:padding="2dp" android:autoText="true"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/meta_keywords" android:singleLine="true"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:id="@+id/submit" android:paddingLeft="50dp"
+                    android:paddingRight="50dp" android:layout_marginTop="8dp"/>
+        </LinearLayout>
+</ScrollView>
