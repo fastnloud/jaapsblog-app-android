@@ -2,7 +2,9 @@ package nl.jaapsblog.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -43,5 +45,15 @@ public class Form extends Activity {
         if (hasSelection > 0) {
             spinner.setSelection(hasSelection);
         }
+    }
+
+    public void createTextField(int id, String value) {
+        EditText field = (EditText) findViewById(id);
+        field.setText(value);
+    }
+
+    /* Submit action */
+    public void submit(View view) {
+
     }
 }
