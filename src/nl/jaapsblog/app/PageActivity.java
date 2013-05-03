@@ -13,13 +13,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PageActivity extends ListActivity implements Tasks {
 
     private ProgressDialog progressDialog;
     private Requester requester;
 
-    private ArrayList<String> values = new ArrayList<String>();
+    private ArrayList<Integer> fieldIds = new ArrayList<Integer>();
+    private String[] fieldNames;
+
+    private ArrayList<String> list = new ArrayList<String>();
     private ArrayAdapter<String> adapter;
 
     private JSONArray data;
@@ -30,7 +34,7 @@ public class PageActivity extends ListActivity implements Tasks {
         adapter = new ArrayAdapter<String> (
             this,
             android.R.layout.simple_list_item_1,
-            values // empty initially
+            list // empty initially
         );
 
         setListAdapter(adapter);
@@ -38,23 +42,32 @@ public class PageActivity extends ListActivity implements Tasks {
         // fetch data
         requester = new Requester(this);
         requester.execute(getString(R.string.url_page_index));
+
+        // set field ids.
+        fieldIds.addAll(
+            Arrays.asList(
+                R.id.id, R.id.title, R.id.label, R.id.url_string, R.id.route,
+                R.id.content, R.id.status, R.id.priority, R.id.meta_title,
+                R.id.meta_description, R.id.meta_keywords
+            )
+        );
+
+        // mapping for field ids.
+        fieldNames = new String[] {
+            "id", "title", "label", "url_string", "route", "content", "status",
+            "priority", "meta_title", "meta_description", "meta_keywords"
+        };
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         try {
-            JSONObject obj = data.getJSONObject(position);
-
             Intent intent = new Intent(getApplicationContext(), PageEditActivity.class);
+            intent.putIntegerArrayListExtra("fieldIds", fieldIds);
 
-            String extra[] = new String[] {
-                "id", "title", "label", "url_string", "route", "content", "status",
-                "priority", "meta_title", "meta_description", "meta_keywords"
-            };
-
-            intent.putExtra("extra", extra);
-            for(int i = 0; i < extra.length; ++i) {
-                intent.putExtra(extra[i], obj.get(extra[i]).toString());
+            JSONObject obj = data.getJSONObject(position);
+            for(int i = 0; i < fieldNames.length; ++i) {
+                intent.putExtra(fieldIds.get(i).toString(), obj.get(fieldNames[i]).toString());
             }
 
             startActivity(intent);
@@ -74,7 +87,7 @@ public class PageActivity extends ListActivity implements Tasks {
         try {
             data = requester.getDataParsed();
             for(int i = 0 ; i < data.length() ; i++){
-                values.add(data.getJSONObject(i).get("title").toString());
+                list.add(data.getJSONObject(i).get("title").toString());
             }
 
             // update list
