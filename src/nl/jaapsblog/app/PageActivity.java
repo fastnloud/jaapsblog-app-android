@@ -64,6 +64,7 @@ public class PageActivity extends ListActivity implements Tasks {
         try {
             Intent intent = new Intent(getApplicationContext(), PageEditActivity.class);
             intent.putIntegerArrayListExtra("fieldIds", fieldIds);
+            intent.putExtra("fieldNames", fieldNames);
 
             JSONObject obj = data.getJSONObject(position);
             for(int i = 0; i < fieldNames.length; ++i) {

@@ -5,11 +5,13 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class PageEditActivity extends Form implements Tasks {
+public class PageEditActivity extends Form {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.page_edit);
+        setUrl(getString(R.string.url_page_edit));
 
         if (getIntent().hasExtra("fieldIds")) {
             ArrayList<Integer> fieldIds = getIntent().getIntegerArrayListExtra("fieldIds");
@@ -31,9 +33,5 @@ public class PageEditActivity extends Form implements Tasks {
             }
         }
     }
-
-    public void onTaskStarted() { }
-
-    public void onTaskCompleted() { }
 
 }
