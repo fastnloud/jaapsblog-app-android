@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -58,6 +60,26 @@ public class PageActivity extends ListActivity implements Tasks {
             "id", "title", "label", "url_string", "route", "content", "status",
             "priority", "meta_title", "meta_description", "meta_keywords"
         };
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0, 0, 0, "Add");
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (0 == item.getItemId()) {
+            Intent intent = new Intent(getApplicationContext(), PageEditActivity.class);
+            intent.putIntegerArrayListExtra("fieldIds", fieldIds);
+            intent.putExtra("fieldNames", fieldNames);
+            startActivity(intent);
+
+            return true;
+        }
+
+        return false;
     }
 
     @Override
