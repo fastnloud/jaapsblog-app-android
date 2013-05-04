@@ -17,7 +17,6 @@ public class AuthActivity extends Activity implements Tasks {
 
     private ProgressDialog progressDialog;
     private Requester requester;
-    private Toast toast;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,7 @@ public class AuthActivity extends Activity implements Tasks {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
-            toast.makeText(this, "Authentication failed, check your Internet connection.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Authentication failed.", Toast.LENGTH_SHORT).show();
         }
     }
 
