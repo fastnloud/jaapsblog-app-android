@@ -6,6 +6,7 @@
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                       android:orientation="vertical"
                       android:layout_width="fill_parent"
+                      android:id="@+id/form"
                       android:layout_height="wrap_content" android:paddingLeft="10dp"
                       android:paddingTop="20dp" android:paddingRight="10dp" android:paddingBottom="20dp" android:padding="10dp" android:background="#ececec">
             <EditText

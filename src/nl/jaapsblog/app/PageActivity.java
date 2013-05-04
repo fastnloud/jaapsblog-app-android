@@ -28,6 +28,7 @@ public class PageActivity extends ListActivity implements Tasks {
 
     private JSONArray data;
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -57,6 +58,18 @@ public class PageActivity extends ListActivity implements Tasks {
             "id", "title", "label", "url_string", "route", "content", "status",
             "priority", "meta_title", "meta_description", "meta_keywords"
         };
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+
+        // clear data
+        adapter.clear();
+
+        // reload
+        requester = new Requester(this);
+        requester.execute(getString(R.string.url_page_index)); // reload \
     }
 
     @Override

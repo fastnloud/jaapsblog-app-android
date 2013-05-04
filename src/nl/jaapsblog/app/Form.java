@@ -5,10 +5,8 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.view.ViewGroup;
+import android.widget.*;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -75,7 +73,27 @@ public class Form extends Activity implements Tasks {
             Toast.makeText(this, "No URL has been given.", Toast.LENGTH_SHORT).show();
         } else {
             try {
-                ArrayList<Integer> fieldIds = getIntent().getIntegerArrayListExtra("fieldIds");
+                // fetch view group
+                ViewGroup viewGroup = (ViewGroup)findViewById(R.id.form);
+
+                // new container for values
+                ArrayList<String> values = new ArrayList<String>();
+
+                // fetch all values from childs in view group
+                for (int i = 0, count = viewGroup.getChildCount(); i < count; ++i) {
+                    View field = viewGroup.getChildAt(i); // field
+
+                    // text fields
+                    if (field instanceof EditText) {
+                        values.add(((EditText) field).getText().toString());
+                    }
+                    // spinners
+                    else if (field instanceof Spinner) {
+                        values.add(((Spinner) field).getSelectedItem().toString());
+                    }
+                }
+
+                // fields names as defined in activity
                 String[] fieldNames = getIntent().getStringArrayExtra("fieldNames");
 
                 // build json string
@@ -84,7 +102,7 @@ public class Form extends Activity implements Tasks {
                     jsonStringer.object();
                     for (int i = 0; i < fieldNames.length; ++i) {
                         jsonStringer.key(fieldNames[i])
-                                .value(getIntent().getStringExtra(fieldIds.get(i).toString()));
+                                .value(values.get(i));
                     }
                     jsonStringer.endObject();
                 }  catch (JSONException e) {
