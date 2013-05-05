@@ -81,7 +81,7 @@ public class Requester extends AsyncTask<String, Void, Void> {
         try {
             httpPost = new HttpPost(url);
             if (null != data) {
-                httpPost.setEntity(new UrlEncodedFormEntity(data));
+                httpPost.setEntity(new UrlEncodedFormEntity(data, "UTF-8"));
             }
 
             this.reader(httpClient.execute(httpPost));
@@ -100,7 +100,7 @@ public class Requester extends AsyncTask<String, Void, Void> {
         try {
             inputStream = httpEntity.getContent();
 
-            BufferedReader reader       = new BufferedReader(new InputStreamReader(inputStream));
+            BufferedReader reader       = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
             StringBuilder stringBuilder = new StringBuilder();
 
             String line = null;
