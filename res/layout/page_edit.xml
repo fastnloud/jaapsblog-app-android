@@ -51,10 +51,10 @@
                     android:text="@string/field_label_route"
                     android:textSize="16dp" android:gravity="left"
                     android:padding="2dp" android:autoText="true"/>
-            <EditText
+            <Spinner
+                    android:id="@+id/route"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/route" android:singleLine="true"/>
+                    android:layout_height="wrap_content" />
             <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

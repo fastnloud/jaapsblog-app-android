@@ -20,7 +20,12 @@ public class PageEditActivity extends Form {
                 Integer id = fieldIds.get(i);
                 String value = getIntent().getStringExtra(fieldIds.get(i).toString());
 
-                if (6 == i) { // status
+                if (4 == i) { // route
+                    ArrayList values = new ArrayList<String>();
+                    values.addAll(Arrays.asList("page", "home", "blog"));
+
+                    createSpinner(id, values, value);
+                } else if (6 == i) { // status
                     ArrayList values = new ArrayList<String>();
                     values.addAll(Arrays.asList("online", "online-not-in-menu", "offline"));
 
