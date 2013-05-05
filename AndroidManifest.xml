@@ -24,6 +24,11 @@
         <activity android:name=".PageEditActivity"
                   android:label="Edit page"
                   android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".BlogActivity"
+                  android:label="Blog items"/>
+        <activity android:name=".BlogEditActivity"
+                  android:label="Edit blog"
+                  android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".KillActivity"/>
     </application>
 </manifest> 

@@ -61,7 +61,7 @@ public class ListCreator extends ListActivity implements Tasks  {
     }
 
     /**
-     * Set child Activity.
+     * Set child "form" Activity.
      * @param activity Class
      */
     protected void setChildForm(Class activity) {
@@ -128,7 +128,7 @@ public class ListCreator extends ListActivity implements Tasks  {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (0 == item.getOrder()) {
-            Intent intent = new Intent(getApplicationContext(), PageEditActivity.class);
+            Intent intent = new Intent(getApplicationContext(), form);
             intent.putIntegerArrayListExtra("fieldIds", fieldIds);
             intent.putExtra("fieldNames", fieldNames);
             startActivity(intent);

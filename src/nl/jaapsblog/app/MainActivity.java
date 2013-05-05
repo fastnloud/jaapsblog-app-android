@@ -13,7 +13,10 @@ public class MainActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String[] list = new String[] {"Pages", "Logout"};
+        String[] list = new String[] {
+            getString(R.string.list_main_1),
+            getString(R.string.list_main_2)
+        };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
             android.R.layout.simple_list_item_1, list
         );
@@ -27,7 +30,7 @@ public class MainActivity extends ListActivity {
             Intent intent = new Intent(this, PageActivity.class);
             startActivity(intent);
         } else if (1 == position) {
-            Intent intent = new Intent(this, KillActivity.class);
+            Intent intent = new Intent(this, BlogActivity.class);
             startActivity(intent);
         }
     }
