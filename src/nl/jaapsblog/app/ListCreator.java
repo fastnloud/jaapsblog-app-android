@@ -39,6 +39,7 @@ public class ListCreator extends ListActivity implements Tasks  {
     private String urlDelete = "";
     private String fieldIndex = "";
     private Class form;
+    private Boolean hasMenu = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -111,6 +112,14 @@ public class ListCreator extends ListActivity implements Tasks  {
     }
 
     /**
+     * Set hasMenu to true/false
+     * @param bool Boolean
+     */
+    protected void hasMenu(Boolean bool) {
+        hasMenu = bool;
+    }
+
+    /**
      * Loader.
      */
     protected void load() {
@@ -121,8 +130,12 @@ public class ListCreator extends ListActivity implements Tasks  {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.list, menu);
-        return true;
+        if (hasMenu) {
+            getMenuInflater().inflate(R.menu.list, menu);
+            return true;
+        }
+
+        return false;
     }
 
     @Override
