@@ -26,6 +26,7 @@ public class Requester extends AsyncTask<String, Void, Void> {
     private Tasks listener;
     private List data = null;
     private boolean success = false;
+    private boolean silent = false;
 
     private static DefaultHttpClient httpClient;
 
@@ -47,12 +48,16 @@ public class Requester extends AsyncTask<String, Void, Void> {
 
     @Override
     protected void onPreExecute() {
-        listener.onTaskStarted();
+        if (!silent) {
+            listener.onTaskStarted();
+        }
     }
 
     @Override
     protected void onPostExecute(Void result) {
-        listener.onTaskCompleted();
+        if (!silent) {
+            listener.onTaskCompleted();
+        }
     }
 
     @Override
@@ -133,6 +138,10 @@ public class Requester extends AsyncTask<String, Void, Void> {
         } catch (JSONException e) {
             Log.e("JSONException", e.getMessage());
         }
+    }
+
+    public void setSilent(Boolean silent) {
+        this.silent = silent;
     }
 
     private void setSuccess(Boolean success) {

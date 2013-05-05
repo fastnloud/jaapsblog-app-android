@@ -6,6 +6,7 @@
     <string name="url_logout">http://dev.jaapsblog.nl/logout</string>
     <string name="url_page_index">http://dev.jaapsblog.nl/admin/page/index</string>
     <string name="url_page_edit">http://dev.jaapsblog.nl/admin/page/edit</string>
+    <string name="url_page_delete">http://dev.jaapsblog.nl/admin/page/delete</string>
 
     <string name="button_login">Login</string>
 

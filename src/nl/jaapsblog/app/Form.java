@@ -144,7 +144,7 @@ public class Form extends Activity implements Tasks {
         if (requester.isSuccess()) {
             Toast.makeText(this, "Saved.", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Failed.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Failed; check your input.", Toast.LENGTH_SHORT).show();
         }
     }
 
