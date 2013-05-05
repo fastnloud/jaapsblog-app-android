@@ -9,16 +9,14 @@
     <string name="url_page_delete">http://dev.jaapsblog.nl/admin/page/delete</string>
 
     <string name="button_login">Login</string>
+    <string name="button_save">Save</string>
 
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
     <string name="hint_title">Title</string>
     <string name="hint_label">Label</string>
     <string name="hint_url_string">URL String</string>
-    <string name="hint_route">Route</string>
     <string name="hint_content">Content</string>
-    <string name="hint_status">Status</string>
-    <string name="hint_priority">Priority</string>
     <string name="hint_meta_title">META Title</string>
     <string name="hint_meta_description">META Description</string>
     <string name="hint_meta_keywords">META Keywords</string>
@@ -33,4 +31,6 @@
     <string name="field_label_meta_title">META Title</string>
     <string name="field_label_meta_description">META Description</string>
     <string name="field_label_meta_keywords">META Keywords</string>
+
+    <string name="field_value_id">0</string>
 </resources>
