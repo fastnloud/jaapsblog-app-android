@@ -28,11 +28,20 @@ public class Form extends Activity implements Tasks {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Set URL string form.
+     * @param url String
+     */
     protected void setUrl(String url) {
         this.url = url;
     }
 
-    /* Pre-defined spinners */
+    /**
+     * Predfined spinned.
+     * @param id int
+     * @param name String name spinner
+     * @param selected String selected
+     */
     protected void createSpinner(int id, String name, String selected) {
         if (name.equals("priority")) {
             ArrayList values = new ArrayList<String>();
@@ -45,7 +54,12 @@ public class Form extends Activity implements Tasks {
         }
     }
 
-    /* Spinner */
+    /**
+     * Custom spinner.
+     * @param id int
+     * @param values ArrayList values
+     * @param selected Selected value
+     */
     protected void createSpinner(int id, ArrayList values, String selected) {
         Spinner spinner = (Spinner) findViewById(id);
         ArrayAdapter adapter = new ArrayAdapter<String> (
@@ -64,13 +78,20 @@ public class Form extends Activity implements Tasks {
         }
     }
 
-    /* Default text field */
+    /**
+     * Default text field.
+     * @param id int
+     * @param value String value
+     */
     protected void createTextField(int id, String value) {
         EditText field = (EditText) findViewById(id);
         field.setText(value);
     }
 
-    /* Submit action */
+    /**
+     * Submitter.
+     * @param view View
+     */
     public void submitForm(View view) {
         if (this.url.isEmpty()) {
             Toast.makeText(this, "No URL has been given.", Toast.LENGTH_SHORT).show();
@@ -129,7 +150,9 @@ public class Form extends Activity implements Tasks {
         }
     }
 
-    /* Loader */
+    /**
+     * Loader.
+     */
     public void onTaskStarted() {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Saving...");
@@ -137,12 +160,20 @@ public class Form extends Activity implements Tasks {
         progressDialog.show();
     }
 
-    /* Dismiss the loader */
+    /**
+     * Submit result.
+     */
     public void onTaskCompleted() {
         progressDialog.dismiss();
 
         if (requester.isSuccess()) {
             Toast.makeText(this, "Saved.", Toast.LENGTH_SHORT).show();
+
+            // finish; initial insert
+            EditText fieldId = (EditText) findViewById(R.id.id);
+            if (fieldId.getText().toString().isEmpty()) {
+                finish();
+            }
         } else {
             Toast.makeText(this, "Failed; check your input.", Toast.LENGTH_SHORT).show();
         }
