@@ -112,7 +112,7 @@ public class ListCreator extends ListActivity implements Tasks  {
     }
 
     /**
-     * Set hasMenu to true/false
+     * Set hasMenu to true/false.
      * @param bool Boolean
      */
     protected void hasMenu(Boolean bool) {

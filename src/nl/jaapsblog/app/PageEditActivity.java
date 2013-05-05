@@ -27,7 +27,7 @@ public class PageEditActivity extends Form {
                     createSpinner(id, values, value);
                 } else if (6 == i) { // status
                     ArrayList values = new ArrayList<String>();
-                    values.addAll(Arrays.asList("online", "online-not-in-menu", "offline"));
+                    values.addAll(Arrays.asList("online", "online, not in menu", "offline"));
 
                     createSpinner(id, values, value);
                 } else if (7 == i) { // priority
