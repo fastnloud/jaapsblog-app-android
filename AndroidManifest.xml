@@ -29,6 +29,8 @@
         <activity android:name=".BlogEditActivity"
                   android:label="Edit blog"
                   android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".ReplyActivity"
+                  android:label="Replies"/>
         <activity android:name=".KillActivity"/>
     </application>
 </manifest> 

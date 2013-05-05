@@ -40,6 +40,7 @@ public class ListCreator extends ListActivity implements Tasks  {
     private String fieldIndex = "";
     private Class form;
     private Boolean hasMenu = true;
+    private Boolean isEditable = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -109,6 +110,14 @@ public class ListCreator extends ListActivity implements Tasks  {
      */
     protected void setFieldIndex(String field) {
         fieldIndex = field;
+    }
+
+    /**
+     * Set hasMenu to true/false.
+     * @param bool Boolean
+     */
+    protected void isEditable(Boolean bool) {
+        isEditable = bool;
     }
 
     /**
@@ -192,19 +201,21 @@ public class ListCreator extends ListActivity implements Tasks  {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        try {
-            Intent intent = new Intent(getApplicationContext(), form);
-            intent.putIntegerArrayListExtra("fieldIds", fieldIds);
-            intent.putExtra("fieldNames", fieldNames);
+        if (isEditable) {
+            try {
+                Intent intent = new Intent(getApplicationContext(), form);
+                intent.putIntegerArrayListExtra("fieldIds", fieldIds);
+                intent.putExtra("fieldNames", fieldNames);
 
-            JSONObject obj = data.getJSONObject(position);
-            for(int i = 0; i < fieldNames.length; ++i) {
-                intent.putExtra(fieldIds.get(i).toString(), obj.get(fieldNames[i]).toString());
+                JSONObject obj = data.getJSONObject(position);
+                for(int i = 0; i < fieldNames.length; ++i) {
+                    intent.putExtra(fieldIds.get(i).toString(), obj.get(fieldNames[i]).toString());
+                }
+
+                startActivity(intent);
+            } catch (JSONException e) {
+                Log.e("JSONException", e.getMessage());
             }
-
-            startActivity(intent);
-        } catch (JSONException e) {
-            Log.e("JSONException", e.getMessage());
         }
     }
 

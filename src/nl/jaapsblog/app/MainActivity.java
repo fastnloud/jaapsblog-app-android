@@ -15,7 +15,8 @@ public class MainActivity extends ListActivity {
 
         String[] list = new String[] {
             getString(R.string.list_main_1),
-            getString(R.string.list_main_2)
+            getString(R.string.list_main_2),
+            getString(R.string.list_main_3)
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
             android.R.layout.simple_list_item_1, list
@@ -31,6 +32,9 @@ public class MainActivity extends ListActivity {
             startActivity(intent);
         } else if (1 == position) {
             Intent intent = new Intent(this, BlogActivity.class);
+            startActivity(intent);
+        } else if (2 == position) {
+            Intent intent = new Intent(this, ReplyActivity.class);
             startActivity(intent);
         }
     }
