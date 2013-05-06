@@ -6,20 +6,6 @@
     <string name="list_main_2">Blog Items</string>
     <string name="list_main_3">Replies</string>
 
-    <string name="url_login">http://dev.jaapsblog.nl/login</string>
-    <string name="url_logout">http://dev.jaapsblog.nl/logout</string>
-
-    <string name="url_page_index">http://dev.jaapsblog.nl/admin/page/index</string>
-    <string name="url_page_edit">http://dev.jaapsblog.nl/admin/page/edit</string>
-    <string name="url_page_delete">http://dev.jaapsblog.nl/admin/page/delete</string>
-
-    <string name="url_blog_index">http://dev.jaapsblog.nl/admin/blog/index</string>
-    <string name="url_blog_edit">http://dev.jaapsblog.nl/admin/blog/edit</string>
-    <string name="url_blog_delete">http://dev.jaapsblog.nl/admin/blog/delete</string>
-
-    <string name="url_blog_reply_index">http://dev.jaapsblog.nl/admin/blog/index-reply</string>
-    <string name="url_blog_reply_delete">http://dev.jaapsblog.nl/admin/blog/delete-reply</string>
-
     <string name="button_login">Login</string>
     <string name="button_save">Save</string>
 
