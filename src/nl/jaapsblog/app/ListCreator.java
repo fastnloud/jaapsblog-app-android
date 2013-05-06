@@ -160,7 +160,13 @@ public class ListCreator extends ListActivity implements Tasks  {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle("Action Menu");
+
+        // get selected item
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+        String selected = ((TextView) info.targetView).getText().toString();
+
+        menu.setHeaderTitle(selected); // add as header text
+
         getMenuInflater().inflate(R.menu.list_context, menu);
     }
 
