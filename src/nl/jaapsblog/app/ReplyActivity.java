@@ -11,7 +11,7 @@ public class ReplyActivity extends ListCreator {
         setChildForm(BlogEditActivity.class);
         setUrlIndex(getString(R.string.url_blog_reply_index));
         setUrlDelete(getString(R.string.url_blog_reply_delete));
-        setFieldIndex("name");
+        setFieldIndex("timestamp");
         hasMenu(false);
         isEditable(false);
 
