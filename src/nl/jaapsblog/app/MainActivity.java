@@ -14,6 +14,7 @@ public class MainActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.list);
 
         String[] list = new String[] {
             getString(R.string.list_main_1),
@@ -21,7 +22,7 @@ public class MainActivity extends ListActivity {
             getString(R.string.list_main_3)
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-            android.R.layout.simple_list_item_1, list
+            R.layout.list_item, list
         );
 
         setListAdapter(adapter);

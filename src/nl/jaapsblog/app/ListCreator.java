@@ -45,6 +45,7 @@ public class ListCreator extends ListActivity implements Tasks  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.list);
         registerForContextMenu(getListView());
         setAdapter();
     }
@@ -55,7 +56,7 @@ public class ListCreator extends ListActivity implements Tasks  {
     private void setAdapter() {
         adapter = new ArrayAdapter<String> (
                 this,
-                android.R.layout.simple_list_item_1,
+                R.layout.list_item,
                 list // empty initially
         );
 
